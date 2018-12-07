@@ -7,29 +7,28 @@
 
 int main(int argc, char *argv[]) {
 	
-	FILE *fp; //FILE pointer for reading movie data 
+	FILE *fp; //영화 정보를 불러오기 위한 파일 포인터  
 	char input [100];
 	int input1;
 	float input2;
-	struct movie
+	struct movie //구조체 정의 
 	{
-	char name[200]; //movie name
-	char country[10]; //movie country
-	int runtime; //movie runtime
-	float score; //movie score
+	char name[200]; //영화 제목 
+	char country[10]; //국가 
+	int runtime; //상영 시간 
+	float score; //평점 
 	};
-	struct movie movies[100];
-	int exit_flag = 0; //flag variable for while loop
-	int option; //user input option
-	int i=0;
-	int arg;
+	struct movie movies[100]; //구조체 변수 선언(movies라는 실체 생성) 
+	int exit_flag = 0; //while 구문 변수 선언 
+	int option; //옵션 선택 시 
+	int i=0; //i 초기화 
 
 	//2. program start
-	fp=fopen("sample.txt","r+");
+	fp=fopen("sample.txt","r+"); //영화 정보가 담긴 파일 열기 
 		
-    fgets(input, sizeof(input), fp); //sample.txt에서 문자열을 읽음
+    fgets(input, sizeof(input), fp); //sample.txt에서 문자열을 읽기 
        
-    fscanf(fp,"%s %s %d %f", movies[i].name, movies[i].country, &movies[i].runtime, &movies[i].score);
+    fscanf(fp,"%s %s %d %f", movies[i].name, movies[i].country, &movies[i].runtime, &movies[i].score); //구조체로 받기 
         
     fclose(fp); //파일 포인터 닫기
 
