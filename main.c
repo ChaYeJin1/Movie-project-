@@ -24,12 +24,15 @@ int main(int argc, char *argv[]) {
 	int i=0; //i 초기화 
 
 	//2. program start
-	fp=fopen("sample.txt","r+"); //영화 정보가 담긴 파일 열기 
+	fp=fopen("movie.dat","r+"); //영화 정보가 담긴 파일 열기 
 		
-    fgets(input, sizeof(input), fp); //sample.txt에서 문자열을 읽기 
-       
-    fscanf(fp,"%s %s %d %f", movies[i].name, movies[i].country, &movies[i].runtime, &movies[i].score); //구조체로 받기 
-        
+    fgets(input, sizeof(input), fp); //movie.dat에서 문자열을 읽기
+	 
+    for(i=0; i<100; i++)
+	{
+	 fscanf(fp,"%s %s %d %f", movies[i].name, movies[i].country, &movies[i].runtime, &movies[i].score); //구조체로 받기 
+	}   
+          
     fclose(fp); //파일 포인터 닫기
 
 	
@@ -48,8 +51,12 @@ int main(int argc, char *argv[]) {
 	switch(option)
 	    {
 	    case 1: //print all the movies
-			printf("\nprinting all the movies in the list.....\n\n\n");
-			printf("----------------------------------------\n");
+	        for(i=0; i<100; i++)
+            {
+                printf("\nprinting all the movies in the list.....\n\n\n");
+            	scanf("%s %s %d %f", movies[i].name, movies[i].country, &movies[i].runtime, &movies[i].score);
+	        } 
+			
 			break;
 				
 		case 2: //print movies of specific country
