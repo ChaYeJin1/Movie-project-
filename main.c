@@ -8,9 +8,6 @@
 int main(int argc, char *argv[]) {
    
    FILE *fp; //영화 정보를 불러오기 위한 파일 포인터  
-   char input [100];
-   int input1;
-   float input2;
    struct movie //구조체 정의 
    {
    char name[200]; //영화 제목 
@@ -57,6 +54,7 @@ int main(int argc, char *argv[]) {
                   printf("Name : %s/country : %s/running time : %d/score : %0.2f\n", movies[i].name, movies[i].country, movies[i].runtime, movies[i].score);
                   printf("----------------------------------------\n");
                }
+            printf("totally %d movies are listed !\n", i);
             break;
             
     case 2: //print movies of specific country
