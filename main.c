@@ -19,7 +19,10 @@ int main(int argc, char *argv[]) {
    int exit_flag = 0; //while 구문 변수 선언 
    int option; //옵션 선택 시 
    int i=0; //i 초기화 
-   int j=0; //j 초기화 
+   int j=0; //j 초기화
+   int cnt=0; //case 2인 경우, 출력되는 영화 데이터 카운트 
+   int cnt1=0; //case 3인 경우, 출력되는 영화 데이터 카운트 
+   int cnt2=0; //case 4인 경우, 출력되는 영화 데이터 카운트 
    struct movie key[1];
 
    //2. program start
@@ -65,8 +68,10 @@ int main(int argc, char *argv[]) {
 			   {//모든 데이터에서 비교하면서 같은 영화정보 출력
                   printf("Name : %s/country : %s/running time : %d/score : %0.2f\n", movies[j].name, movies[j].country, movies[j].runtime, movies[j].score);
                   printf("----------------------------------------\n");
+                  cnt++;
                }
             }
+            printf("totally %d movies are listed !\n", cnt);
             break;
                   
       case 3: //print movies with long runtime
@@ -78,8 +83,10 @@ int main(int argc, char *argv[]) {
 			   {//입력받은 런타임보다 긴 영화를 출력
                   printf("Name : %s/country : %s/running time : %d/score : %0.2f\n", movies[j].name, movies[j].country, movies[j].runtime, movies[j].score);
                   printf("----------------------------------------\n");
+                  cnt1++;
                }
             }
+            printf("totally %d movies are listed !\n", cnt1);
             break;
             
       case 4: //print movies with high score
@@ -90,8 +97,10 @@ int main(int argc, char *argv[]) {
 			   {
                   printf("Name : %s/country : %s/running time : %d/score : %0.2f\n", movies[j].name, movies[j].country, movies[j].runtime, movies[j].score);
                   printf("----------------------------------------\n");
+                  cnt2++;
                }
             }
+            printf("totally %d movies are listed !\n", cnt2);
             break;
             
       case 5:
