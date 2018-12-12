@@ -69,6 +69,7 @@ int main(int argc, char *argv[]) {
     case 2: //print movies of specific country
         printf("country : ");
         scanf("%s",&key[0].country);//국가를 입력받음 
+        cnt=0;
             for(j=0;j<MAX;j++)
 			{//저장되어있는 데이터와 입력받은 변수를 비교
                if(!strcmp(movies[j].country,key[0].country))
@@ -85,6 +86,7 @@ int main(int argc, char *argv[]) {
       case 3: //print movies with long runtime
         printf("runtime : "); 
         scanf("%d", &key[0].runtime);//런타임을 입력받음 
+        cnt1=0;
             for(j=0;j<MAX;j++)
 			{//저장되어있는 데이터와 입력받은 런타임을 비교
                if(movies[j].runtime>=key[0].runtime)
@@ -101,6 +103,7 @@ int main(int argc, char *argv[]) {
       case 4: //print movies with high score
         printf("score : ");
         scanf("%f", &key[0].score);//평점을 입력받음 
+        cnt2=0;
             for(j=0;j<MAX;j++)
 			{//저장되어있는 데이터와 입력받은 평점을 비교
                if(movies[j].score>=key[0].score)
